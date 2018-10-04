@@ -1,6 +1,7 @@
 package xyz.fly;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -19,8 +20,10 @@ public class FlyXYZ extends JavaPlugin {
 
     @Override
     public void onDisable(){
-        for(Player p: this.players){
-            p.setAllowFlight(false);
+        for(Player p: this.getServer().getOnlinePlayers()){
+            if(p.getGameMode() != GameMode.CREATIVE && p.getGameMode() != GameMode.SPECTATOR){
+                p.setAllowFlight(false);
+			}
         }
     }
 
