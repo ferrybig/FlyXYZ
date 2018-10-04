@@ -1,0 +1,6 @@
+main: xyz.fly.FlyXYZ
+name: FlyXYZ
+version: 1.0
+description: A better Fly plugin
+commands:
+  fly:
